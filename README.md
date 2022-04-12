@@ -23,11 +23,19 @@ Open the link that dfx provides under **Frontend:** (e.g. quickstart_scaling_fro
 
 ### Possible errors
 
-./build.sh: line 5: wasm-opt: command not found:
+> ./build.sh: line 5: wasm-opt: command not found:
 
 ```bash
 sudo apt install binaryen
 ```
+
+> sh: 1: webpack: not found
+
+```bash
+npm install --save-dev webpack
+
+```
+
 
 If you git clone the project, depending on your OS you might need to run:
 
