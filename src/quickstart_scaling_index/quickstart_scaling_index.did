@@ -1,0 +1,8 @@
+service : {
+    "addContentModerator" : (principal) -> ();
+    "getMetrics" : () -> (text) query;
+    "getGlobalIndex" : () -> (vec vec text) query;
+    "getIndexByTag" : (text) -> (vec principal) query;
+    "getAllIndexes" : () -> (vec principal) query;
+    "getUploadOrder" : () -> (vec principal) query;
+ }

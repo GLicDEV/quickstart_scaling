@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/quickstart_scaling_index",
+    "src/quickstart_scaling_bucket"
+]

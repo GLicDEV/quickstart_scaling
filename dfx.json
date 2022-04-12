@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "dfx": "0.9.3",
+  "canisters": {
+    "quickstart_scaling_index": {
+      "type": "rust",
+      "package": "quickstart_scaling_index",
+      "candid": "src/quickstart_scaling_index/quickstart_scaling_index.did"
+    },
+    "quickstart_scaling_frontend": {
+      "dependencies": [
+        "quickstart_scaling_index"
+      ],
+      "frontend": {
+        "entrypoint": "src/quickstart_scaling_frontend/src/index.html"
+      },
+      "source": [
+        "src/quickstart_scaling_frontend/assets",
+        "dist/quickstart_scaling_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

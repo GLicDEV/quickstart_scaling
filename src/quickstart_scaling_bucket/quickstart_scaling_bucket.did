@@ -1,0 +1,31 @@
+    type BucketEntry = record {
+        tag: text;
+        body: text; 
+        submitted_at: nat64;
+        submitted_by: principal;
+    };
+    
+    type EffectiveIndex = record {
+        tags: vec text;
+        current_entries: nat64;
+        bucket_max_entries: nat64;
+    };
+
+    type BucketMetrics = record {
+        canister_id: principal;
+        cycles_balance: nat;
+        controllers: vec principal;
+        moderators: vec principal;
+        index_canister_id: principal;
+        max_entries: nat64;
+        current_entries: nat64;
+        memory_used: nat64;
+    };
+    
+    service : {
+    "getMetrics" : () -> (BucketMetrics) query;
+    "postContent" : (text, text) -> (bool);
+    "getAll" : () -> (vec BucketEntry) query;
+    "getByTag" : (text) -> (vec BucketEntry) query;
+    "getBucketIndex" : () -> (EffectiveIndex) query;
+    }
